@@ -173,4 +173,13 @@
   pointPrivateGetterSetter1.x = 99
   pointPrivateGetterSetter1.y = 101
 
+  def log(message: String, level: String = "INFO") = println(s"$level: $message")
+  log("System starting")
+  log("User not found", "WARNING")
+
+  def printName(firstName: String, lastName: String) = println(s"$firstName $lastName")
+  printName("John", "Doe")
+  printName(firstName = "Dinesh", lastName = "Nagarajan")
+  printName(lastName = "Nagarajan", firstName = "Dinesh")
+
 def msg = "I was compiled by Scala 3. :)"
