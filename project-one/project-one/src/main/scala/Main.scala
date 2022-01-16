@@ -130,4 +130,47 @@
   val customGreeter = new CustomizableGreeter("How are you, ", "?")
   customGreeter.greet("Scala developer, custom greeter")
 
+  // Minimal class definition
+  class User
+
+  val user1 = new User
+
+  // Class with constructor and body
+  // Constructor can be optional parameter with default value
+  class PointNew(var x: Int = 0, var y: Int = 0) {
+    def move(dx: Int, dy: Int): Unit = {
+      x = x + dx
+      y = y + dy
+    }
+
+    override def toString: String = s"($x, $y)"
+  }
+
+  val point1 = new PointNew(1)
+  println(point1.x)
+  println(point1)
+
+  // Class with private members and getter/setter syntax
+  class PointPrivateGetterSetter {
+    private var _x = 0
+    private var _y = 0
+    private val bound = 100
+
+    def x = _x
+    def x_= (newValue: Int): Unit = {
+      if (newValue < bound) _x = newValue else printWarning
+    }
+
+    def y = _y
+    def y_= (newValue: Int): Unit = {
+      if (newValue < bound) _y = newValue else printWarning
+    }
+
+    private def printWarning = println("Warning: Out of bounds")
+  }
+  println("Private members and getter/setter syntax")
+  val pointPrivateGetterSetter1 = new PointPrivateGetterSetter
+  pointPrivateGetterSetter1.x = 99
+  pointPrivateGetterSetter1.y = 101
+
 def msg = "I was compiled by Scala 3. :)"
