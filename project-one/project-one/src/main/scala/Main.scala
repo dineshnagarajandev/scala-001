@@ -72,4 +72,26 @@
   }
   println(getSquareString(2))
 
+  // Classes
+
+  class Greeter(prefix: String, suffix: String) {
+    def greet(name: String): Unit = 
+      println(prefix + name + suffix)
+  }
+
+  val greeter = new Greeter("Hello, ", "!")
+  greeter.greet("Scala developer")
+
+  case class Point(x: Int, y: Int)
+
+  val point = Point(1, 2)
+  val anotherPoint = Point(1, 2)
+  val yetAnotherPoint = Point(4, 4)
+
+  if (point == anotherPoint) {
+    println(s"$point and $anotherPoint are the same.")
+  } else {
+    println(s"$point and $anotherPoint are differerent.")
+  }
+
 def msg = "I was compiled by Scala 3. :)"
