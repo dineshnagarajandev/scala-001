@@ -109,4 +109,25 @@
   val newerId: Int = IdFactory.create()
   println(newerId)
 
+  // Traits
+  println("Traits")
+  trait GreeterTrait {
+    def greet(name: String): Unit =
+      println("Hello, " + name + "!")
+  }
+
+  class DefaultGreeter extends GreeterTrait
+
+  class CustomizableGreeter(prefix: String, postfix: String) extends GreeterTrait {
+    override def greet(name: String): Unit = {
+      println(prefix + name + postfix)
+    }
+  }
+
+  val default_greeter = new DefaultGreeter()
+  default_greeter.greet("Scala developer, default greeter")
+
+  val customGreeter = new CustomizableGreeter("How are you, ", "?")
+  customGreeter.greet("Scala developer, custom greeter")
+
 def msg = "I was compiled by Scala 3. :)"
